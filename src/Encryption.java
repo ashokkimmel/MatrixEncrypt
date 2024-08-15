@@ -1,21 +1,13 @@
 public class Encryption {
     public static void main(String[] args) {
-        Matrix mymatrix = new Matrix();
+        char[] mylst = "I'm not surprised that I had to tell you the answer.".toCharArray();
+        Matrix.printArray(mylst);
         try {
-            mymatrix.set(new int[] {1,2,3,4,5,6,77,8,9,105,11,12,13,14,15,120});
-//            mymatrix.set(new int[] {1,2,2,3});
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        char[] mylst = {43,53};
-        double d = (double) 389283 /3892310;
-        int i = 3892310 * 4;
-        System.out.println(i*d);
-        try {
-            int[] encryptedlst = mymatrix.multiply(mylst);
-            mymatrix.set_inverse(mymatrix);
-            int[] decryptedlst = mymatrix.multiply(encryptedlst);
-//            Matrix.printArray(decryptedlst);
+            Matrix mymatrix = new Matrix(new int[] {4, 2, 3, 7, 4, 5, 6, 8, 6, 5, 4, 9, 8, 4, 2, 4});
+            char[] encryptedlst = mymatrix.encrypt(mylst);
+            System.out.println(encryptedlst);
+            char[] decryptedlst = mymatrix.decrypt(encryptedlst);
+            System.out.println(decryptedlst);
         }catch (Exception e) {
             e.printStackTrace();
         }
